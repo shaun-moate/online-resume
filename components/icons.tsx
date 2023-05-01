@@ -4,6 +4,7 @@ import {
   Moon,
   SunMedium,
   Twitter,
+  Linkedin,
   type Icon as LucideIcon,
 } from "lucide-react"
 
@@ -13,6 +14,7 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   twitter: Twitter,
+  linkedin: Linkedin,
   logo: Webhook,
   gitHub: (props: LucideProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>

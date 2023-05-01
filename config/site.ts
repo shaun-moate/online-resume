@@ -13,6 +13,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/shauntmoate",
     github: "https://github.com/shaun-moate",
+    linkedin: "https://linkedin.com/in/shaun-moate",
     docs: "https://github.com/shaun-moate/online-resume",
   },
 }

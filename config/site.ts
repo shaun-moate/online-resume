@@ -14,6 +14,10 @@ export const siteConfig = {
     twitter: "https://twitter.com/shauntmoate",
     github: "https://github.com/shaun-moate",
     linkedin: "https://linkedin.com/in/shaun-moate",
-    docs: "https://github.com/shaun-moate/online-resume",
   },
+  intro: [
+    " an avid technologist",
+    " an industrious worker",
+    " an engineering leader",
+  ]
 }

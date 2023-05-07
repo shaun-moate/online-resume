@@ -20,7 +20,7 @@ export function MainNav({ items }: MainNavProps) {
         </span>
       </Link>
       {items?.length ? (
-        <nav className="hidden gap-6 md:flex">
+        <nav className="transition duration-200 hover:scale-110 hidden gap-6 md:flex">
           {items?.map(
             (item, index) =>
               item.href && (

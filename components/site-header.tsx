@@ -17,6 +17,7 @@ export function SiteHeader() {
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
+              className="transiton duration-200 hover:scale-110"
             >
               <div
                 className={buttonVariants({
@@ -32,6 +33,7 @@ export function SiteHeader() {
               href={siteConfig.links.linkedin}
               target="_blank"
               rel="noreferrer"
+              className="transiton duration-200 hover:scale-110"
             >
               <div
                 className={buttonVariants({
@@ -47,6 +49,7 @@ export function SiteHeader() {
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
+              className="transiton duration-200 hover:scale-110"
             >
               <div
                 className={buttonVariants({

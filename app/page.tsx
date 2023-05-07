@@ -1,11 +1,8 @@
 'use client'
 
 import Image from "next/image"
-import Link from "next/link"
 import Typewriter from "typewriter-effect"
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
 import intro from "/public/intro.png"
 
 export default function IndexPage() {
@@ -19,6 +16,7 @@ export default function IndexPage() {
             height={640}
             width={640}
           />
+        </div>
         <div className="flex max-w-[980px] flex-col items-start gap-2">
           <h1 className="pt-60 text-2xl text-red-600 font-bold leading-tight tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl">
             I am
@@ -32,17 +30,6 @@ export default function IndexPage() {
               }}
             />
           </h1>
-        </div>
-      </div>
-        <div>
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href={siteConfig.links.github}
-            className={buttonVariants({ variant: "outline", size: "lg" })}
-          >
-            GitHub
-          </Link>
         </div>
       </div>
     </section>

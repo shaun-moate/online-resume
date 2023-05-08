@@ -17,8 +17,17 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "#2E3440",
+        foreground: "#E5E9F0",
+        dark: {
+          background: "#2E3440",
+          foreground: "#E5E9F0",
+          yellow: "#5E81AC",
+          green: "#A3BE8C",
+          gray: "#88C0D0",
+          blue: "#EBCB8B",
+          red: "#BF616A"
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,46 +74,10 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        "wiggle": {
-          '0%, 100%': { transform: 'rotateZ(-1deg)' },
-          '50%': { transform: 'rotateZ(1deg)' },
-        },
-        "white-grey": {
-          '0%, 100%': { fill: 'white' },
-          '50%': { fill: '#E6E6E6' },
-        },
-        "white-blue": {
-          '0%, 100%': { fill: 'white' },
-          '50%': { fill: '#6C63FF' },
-        },
-        "blue-grey": {
-          '0%, 100%': { fill: '#6C63FF' },
-          '50%': { fill: '#E6E6E6' },
-        },
-        "blue-white": {
-          '0%, 100%': { fill: '#6C63FF' },
-          '50%': { fill: 'white' },
-        },
-        "grey-white": {
-          '0%, 100%': { fill: '#E6E6E6' },
-          '50%': { fill: 'white' },
-        },
-        "grey-blue": {
-          '0%, 100%': { fill: '#E6E6E6' },
-          '50%': { fill: '#6C63FF' },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "wiggle": "wiggle 1s ease-in-out infinite",
-        "wiggle-fast": "wiggle 200ms ease-in-out infinite",
-        "white-grey": "white-grey 1800ms infinite",
-        "white-blue": "white-blue 2000ms infinite",
-        "blue-grey": "blue-grey 2200ms infinite",
-        "blue-white": "blue-white 2100ms infinite",
-        "grey-white": "grey-white 1900ms infinite",
-        "grey-blue": "grey-blue 2000ms infinite",
       },
     },
   },

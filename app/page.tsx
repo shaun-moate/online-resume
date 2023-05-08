@@ -27,7 +27,7 @@ export default function IndexPage() {
   }, [init]);
 
   const onClickAnywhere = () => {
-    inputElement.current.focus();
+    inputElement.current!.focus();
   };
 
   return (

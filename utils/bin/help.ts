@@ -3,8 +3,9 @@ export const help = () => {
     --------------------------------------------------
     help: list out possible commands
     COMMANDS:
-      help           list out possible commands
       clear          clear the screen
+      help           list out possible commands
       neofetch       short summary of me
+      projects       list of public github projects
     --------------------------------------------------`;
 }

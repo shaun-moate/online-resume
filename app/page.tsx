@@ -20,7 +20,8 @@ export default function IndexPage() {
     setLastCommandIndex,
   } = useHistory([]);
 
-  const init = useCallback(() => setHistory(banner()), [setHistory]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const init = useCallback(() => setHistory(banner()), []);
 
   useEffect(() => {
     init();

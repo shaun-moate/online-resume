@@ -1,5 +1,3 @@
-import { siteConfig } from "@/config/site";
-
 export const neofetch = () => {
     return `
              @@@@@@@@@@@@@                    neofetch: summar of my details
@@ -18,8 +16,5 @@ export const neofetch = () => {
         @@@                  @@@ @@          PROJECTS
          @|  @@@@@@@@@@@@@@@@   @@          tbd
          @|                      @@
-
-Type 'help' to see the list of available commands.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${siteConfig.links.github}" target="_blank">here</a></u> for the Github repository.
 `;
 };

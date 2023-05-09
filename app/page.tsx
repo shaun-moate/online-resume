@@ -4,7 +4,7 @@ import { useRef, useEffect, useCallback } from "react"
 
 import { CommandHistory } from "@/components/command-history";
 import { useHistory } from "@/hooks/history";
-import { neofetch } from "@/utils/bin/index";
+import { banner } from "@/utils/bin/index";
 import { CommandInput } from "@/components/command-input";
 
 export default function IndexPage() {
@@ -20,7 +20,7 @@ export default function IndexPage() {
     setLastCommandIndex,
   } = useHistory([]);
 
-  const init = useCallback(() => setHistory(neofetch()), []);
+  const init = useCallback(() => setHistory(banner()), []);
 
   useEffect(() => {
     init();

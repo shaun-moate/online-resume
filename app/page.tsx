@@ -20,7 +20,7 @@ export default function IndexPage() {
     setLastCommandIndex,
   } = useHistory([]);
 
-  const init = useCallback(() => setHistory(banner()), []);
+  const init = useCallback(() => setHistory(banner()), [setHistory]);
 
   useEffect(() => {
     init();
@@ -32,10 +32,10 @@ export default function IndexPage() {
 
   return (
     <div
-      className="font-mono overflow-hidden p-8 min-h-screen border-2 rounded border-dark-yellow"
+      className="min-h-screen overflow-hidden rounded border-2 border-dark-yellow p-8 font-mono"
       onClick={onClickAnywhere}
     >
-      <div ref={containerRef} className="overflow-y-auto h-full">
+      <div ref={containerRef} className="h-full overflow-y-auto">
         <CommandHistory history={history} />
         <CommandInput
             inputRef={inputElement}

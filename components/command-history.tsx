@@ -11,11 +11,11 @@ export const CommandHistory: React.FC<{ history: Array<History> }> = ({
         <div key={entry.command + index}>
           <div className="flex flex-row space-x-2">
             <Ps1/>
-          <div className="flex-grow">
+          <div className="grow">
             {entry.command}
           </div>
           </div>
-          <p className="whitespace-pre-wrap mb-2"
+          <p className="mb-2 whitespace-pre-wrap"
              style={{ lineHeight: 'normal' }}
              dangerouslySetInnerHTML={{ __html: entry.output }}
           />

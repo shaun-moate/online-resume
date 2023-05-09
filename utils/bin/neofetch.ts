@@ -1,6 +1,8 @@
+import { siteConfig } from "@/config/site";
+
 export const neofetch = () => {
     return `
-             @@@@@@@@@@@@@                    neofetch: summar of my details
+             @@@@@@@@@@@@@                    neofetch: summary of my details
         @@@@               @@@@             -----------
       @@                       @@            ABOUT
     @@                           @@          ${siteConfig.fullname}

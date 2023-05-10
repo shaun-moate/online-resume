@@ -67,10 +67,6 @@ jobs:
     - name: Build online-resume
       run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-    - run: echo "💡 Ready to export static html!"
-    - name: Static HTML export with Next.js
-      run: ${{ steps.detect-package-manager.outputs.runner }} next export
-
     - run: echo "🔎 Last step! Build artifacts... boring."
     - name: Upload build artifacts
       uses: actions/upload-artifact@v1

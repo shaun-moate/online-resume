@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# get telescope to ignore .git to remove bloat
 .git
 
 # dependencies

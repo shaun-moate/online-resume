@@ -1,0 +1,69 @@
+name: build online-resume
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+    - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - name: Checking out repository to server
+      uses: actions/checkout@v3
+
+    - run: echo "💡 Detecting package manager"
+    - name: Detect package manager
+      id: detect-package-manager
+      run: |
+        if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+          echo "manager=yarn" >> $GITHUB_OUTPUT
+          echo "command=install" >> $GITHUB_OUTPUT
+          echo "runner=yarn" >> $GITHUB_OUTPUT
+          exit 0
+        elif [ -f "${{ github.workspace }}/package.json" ]; then
+          echo "manager=npm" >> $GITHUB_OUTPUT
+          echo "command=ci" >> $GITHUB_OUTPUT
+          echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+          exit 0
+        else
+          echo "Unable to determine package manager"
+          exit 1
+            fi
+
+    - run: echo "🖥️ REQUIRED! Node.js is a must..."
+    - name: Set up Node.js on server
+      uses: actions/setup-node@v3
+      with:
+        node-version: "16"
+        cache: ${{ steps.detect-package-manager.outputs.manager }}
+
+    - run: echo "🐧 Generating new cache whenever packages or source files change"
+    - name: Restore cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          .next/cache
+        key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+        restore-keys: |
+          ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+
+    - run: echo "🐧 Ready to install dependencies for build process!"
+    - name: Install dependencies for build
+      run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+
+    - run: echo "🖥️ The workflow is now ready to test your code (eslint)."
+    - name: Run linters
+      uses: wearerequired/lint-action@v2
+      with:
+        eslint: true
+
+    - run: echo "💡 The ${{ github.repository }} is ready to be built."
+    - name: Build online-resume
+      run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+    - run: echo "🍏 This job's status is ${{ job.status }}."
+    - run: echo "🎉 Party TIME!!!"

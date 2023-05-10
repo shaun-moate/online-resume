@@ -38,9 +38,9 @@ jobs:
     - run: echo "🖥️ REQUIRED! Node.js is a must..."
     - name: Set up Node.js on server
       uses: actions/setup-node@v3
-            with:
-              node-version: "16"
-              cache: ${{ steps.detect-package-manager.outputs.manager }}
+      with:
+        node-version: "16"
+        cache: ${{ steps.detect-package-manager.outputs.manager }}
 
     - run: echo "🐧 Generating new cache whenever packages or source files change"
     - name: Restore cache

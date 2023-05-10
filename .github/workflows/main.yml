@@ -56,22 +56,15 @@ jobs:
     - name: Install dependencies for build
       run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-    - run: echo "🖥️ The workflow is now ready to test your code (running linter and prettier)."
+    - run: echo "🖥️ The workflow is now ready to test your code (eslint)."
     - name: Run linters
       uses: wearerequired/lint-action@v2
       with:
         eslint: true
-        prettier: true
 
     - run: echo "💡 The ${{ github.repository }} is ready to be built."
     - name: Build online-resume
       run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-    - run: echo "🔎 Last step! Build artifacts... boring."
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: build-${{ github.run_id }}
-        path: ./out
-
     - run: echo "🍏 This job's status is ${{ job.status }}."
+    - run: echo "🎉 Party TIME!!!"

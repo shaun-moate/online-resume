@@ -1,0 +1,49 @@
+name: Run checks online-resume
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+    - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - name: Checking out repository to server
+      uses: actions/checkout@v2
+
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+    - run: echo "🖥️ REQUIRED! Node.js is a must..."
+    - name: Set up Node.js on server
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - run: echo "🐧 Ready to install dependencies for build process!"
+    - name: Install dependencies for build
+      run: npm ci
+
+    - run: echo "🖥️ The workflow is now ready to test your code (running linter and prettier)."
+    - name: Run linters
+      uses: wearerequired/lint-action@v2
+      with:
+        eslint: true
+        prettier: true
+
+    - run: echo "💡 The ${{ github.repository }} is ready to be built."
+    - name: Build online-resume
+      run: npm run build
+
+    - run: echo "🔎 Last step! Build artifacts... boring."
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-${{ github.run_id }}
+        path: ./out
+
+    - run: echo "🍏 This job's status is ${{ job.status }}."

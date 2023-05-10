@@ -1,9 +1,9 @@
+name: build online-resume
 on:
   pull_request:
 
 jobs:
   build:
-    name: build online-resume
     runs-on: ubuntu-latest
 
     steps:

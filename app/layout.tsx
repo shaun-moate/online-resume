@@ -33,7 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head/>
         <body
           className={cn(
-            "min-h-screen min-w-full text-sm bg-background p-2 antialiased",
+            "min-h-screen min-w-full bg-background p-2 text-sm antialiased",
             fontMono.variable
           )}
         >

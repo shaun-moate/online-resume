@@ -1,7 +1,7 @@
 import { Ps1 } from "@/components/ps1"
 
-import { zsh } from "@/utils/zsh";
-import { commandExists } from "@/utils/command-exists";
+import { zsh } from "@/lib/zsh";
+import { commandExists } from "@/lib/command-exists";
 
 export const CommandInput = ({
   inputRef,

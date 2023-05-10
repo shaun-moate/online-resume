@@ -1,4 +1,4 @@
-import * as bin from "@/utils/bin"
+import * as bin from "@/lib/bin"
 
 export const commandExists = (command: string) => {
   const commands = ['clear', ...Object.keys(bin)];

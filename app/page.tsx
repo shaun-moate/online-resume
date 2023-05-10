@@ -4,7 +4,7 @@ import { useRef, useEffect, useCallback } from "react"
 
 import { CommandHistory } from "@/components/command-history";
 import { useHistory } from "@/hooks/history";
-import { banner } from "@/utils/bin/index";
+import { banner } from "@/lib/bin/index";
 import { CommandInput } from "@/components/command-input";
 
 export default function IndexPage() {

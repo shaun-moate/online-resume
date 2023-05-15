@@ -33,7 +33,7 @@ export default function IndexPage() {
 
   return (
     <div
-      className="min-h-screen overflow-hidden rounded border-2 border-dark-yellow p-8 font-mono"
+      className="min-h-screen overflow-hidden rounded border-2 border-dark-yellow font-mono"
       onClick={onClickAnywhere}
     >
       <div ref={containerRef} className="h-full overflow-y-auto">

@@ -1,4 +1,5 @@
 export * from "./banner"
 export * from "./help"
+export * from "./experience"
 export * from "./neofetch"
 export * from "./projects"

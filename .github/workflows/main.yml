@@ -1,6 +1,13 @@
 name: build online-resume
 on:
   pull_request:
+    paths:
+    - "app/**"
+    - "components/**"
+    - "hooks/**"
+    - "lib/**"
+    - "styles/**"
+    - "types/**"
 
 jobs:
   build:

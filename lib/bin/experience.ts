@@ -1,6 +1,12 @@
 export const experience = () => {
   return `
-    *   85a4880 (HEAD, master) 'Depop: enable our application engineering teams to deliver value to users faster and more reliably'
+    *   z5ah780 (HEAD, master) 'Trustpilot: driving data-driven decision making and learning-as-a-culture'
+    |\\
+    | :
+    | * 6das7aa (promoted) 2022-09: Chief Data Officer @ Trustpilot
+    | :
+    |/
+    *   43azt83 Merge branch 'Depop: enable our application engineering teams to deliver value to users faster and more reliably'
     |\\
     | :
     | * 6057a0a (promoted) 2022-09: VP, Platform Engineering @ Depop
